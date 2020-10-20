@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./main.css">
+    <title>Sonne | Dein Familienassistent [PREVIEW]</title>
+  </head>
+  <body>
+    <div id="webchat"></div>
+    <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
+    <script>
+      WebChat.default.init({
+        selector: "#webchat",
+        initPayload: "/get_started",
+        customData: {"language": "de"}, // arbitrary custom data. Stay minimal as this will be added to the socket
+        socketUrl: "http://3.122.100.29:5005",
+        socketPath: "/socket.io/",
+        title: "Sonne - Dein Familienlotse",
+        subtitle: "",
+	inputTextFieldHint: "Du kannst Deine Frage hier eingeben...",
+	profileAvatar: "/images/Sonne2.png",
+        params: {"storage": "session"} // can be set to "local"  or "session". details in storage section.
+      })
+    </script>
+  </body>
+</html>
